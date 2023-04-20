@@ -15,7 +15,6 @@ def get_code(subject_name):
         subject['base_id']+=1
     return str(subject[subject_name])
 
-
 #반복
 while True:
     print("작업을 선택하세요.")
@@ -30,7 +29,6 @@ while True:
         credit = int(input("학점을 입력하세요:\n"))
         score = input("평점을 입력하세요:\n")
         print("입력되었습니다.\n")
-
         if subject_name in subject:
             for code, credit_, score_ in subject_list:
                 if get_code(subject_name)==code:
@@ -50,16 +48,12 @@ while True:
                             total_score+=score_list[score]
                         subject_list.append((get_code(subject_name), credit, score))
             continue
-        
         subject_list.append((get_code(subject_name), credit, score))
-
         total_credit+=credit
         total_score+=score_list[score]
-
         if score=='F':
             num_F+=1
             continue
-
         submit_credit+=credit
         submit_score+=score_list[score]
 
@@ -67,7 +61,6 @@ while True:
     if selection == '2':
         for code, credit_, score_ in subject_list:
             print("["+subject[int(code)]+"]", str(credit_)+"학점:", score_)
-
 
     #계산
     if selection == '3':
